@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 30px;
+}
+
+.product {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product img {
+  width: 200px;       /* fixed width */
+  height: 200px;      /* fixed height */
+  object-fit: cover;  /* crop & center without distortion */
+  border-radius: 8px;
+}
+
+</style>
+<body>
+  <header>
+    <h1>🛍️ Shop</h1>
+    <nav>
+       <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <div class="container" id="products"></div>
+
+<script> 
+var products = [
+  { id: 1, name: "Shoes", price: 250, img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXxlbnwwfHwwfHx8MA%3D%3D" },
+  { id: 2, name: "Watch", price: 240, img: "https://m.media-amazon.com/images/I/61n0aVXta7L._UY1000_.jpg" },
+  { id: 3, name: "Backpack", price: 450, img: "https://safaribags.com/cdn/shop/files/3_4bde5165-92cd-4305-b571-dea21fe6568e.jpg?v=1707731843" },
+  { id: 4, name: "Headphones", price: 120, img: "https://cdn.thewirecutter.com/wp-content/media/2023/07/bluetoothheadphones-2048px-0876.jpg" },
+{ id: 5, name: "bat", price: 1100, img: "https://cdnmedia.dsc-cricket.com/media/catalog/product/cache/5b0ea239e50527b43e3253a7f103e237/d/s/dsc-cricket-blu--english-willow-player-edition-bat-bat-2.webp" },
+  { id: 6, name: "shettle bat", price: 300, img: "https://3.imimg.com/data3/TF/UU/MY-3304204/dunlop-shuttle-racket.jpeg" },
+  { id: 7, name: "hand bag", price: 1500, img: "https://www.soosi.co.in/cdn/shop/products/WhatsApp_Image_2019-12-22_at_18.16.01.jpg?v=1577469125" },
+  { id: 8, name: "speaker", price: 500, img: "https://static-01.daraz.com.bd/p/85bb1a121eb8850e07535b77a4d53ee3.png" }
+
+];
+
+//add to cart button
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Display products on Shop Page
+if (document.getElementById("products")) {
+  const container = document.getElementById("products");
+  products.forEach(p => {
+    const div = document.createElement("div");
+    div.classList.add("product");
+    div.innerHTML = `
+      <img src="${p.img}" alt="${p.name}">
+      <h3>${p.name}</h3>
+      <p>Rs.${p.price}</p>
+      <button class="btn" onclick="addToCart(${p.id})">Add to Cart</button>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function addToCart(id) {
+  const product = products.find(p => p.id === id);
+  cart.push(product);
+  saveCart();
+  alert(product.name + " added to cart!");
+}
+</script>
+</body>
+</html>
