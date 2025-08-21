@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - Online Shopping App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+   
+.cart-container {
+  padding: 20px;
+  width: fit-content;
+  height: fit-content;
+  padding: 1%;
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+}
+#cart-items li {
+  margin: 10px 0;
+}
+
+</style>
+<body>
+  <header>
+    <h1>🛒 Your Cart</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+<center>
+  <div class="cart-container">
+    <ul id="cart-items"></ul>
+    <p><strong>Total:</strong> $<span id="total">0</span></p>
+    <button class="btn" id="checkout">Checkout</button>
+  </div>
+</center>
+  <script src="script.js"></script>
+</body>
+</html>

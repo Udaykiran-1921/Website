@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Online Shopping App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 30px;
+}
+
+.product {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product img {
+  width: 200px;       /* fixed width */
+  height: 200px;      /* fixed height */
+  object-fit: cover;  /* crop & center without distortion */
+  border-radius: 8px;
+}
+
+</style>
+<body>
+  <header>
+    <h1>🛍️ Shop</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+       <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <div class="container" id="products"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
