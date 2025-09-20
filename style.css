@@ -40,13 +40,13 @@
 
     header nav a.active
      {
-      color: #07c7f7;
+      color: #f6f603;
       font-weight: bold;
       border-bottom: 3px solid #ce05ed;
 }
 
     header nav a:hover {
-      color: hsl(31, 100%, 50%);
+      color: hsl(128, 96%, 46%);
     }
 .btn {
    background-color:#3f1d1d ;
@@ -90,10 +90,8 @@
 .categories {
   text-align: center;
   padding: 40px 20px;
-  background-image: url("https://t3.ftcdn.net/jpg/09/47/24/02/360_F_947240266_vILwmKGTvRMeF5qUI3JdmafagYMSBj69.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;   
-  width: auto;  
+  background-color: rgb(255, 255, 255);
+  
 }
 .category-container {
   display: flex;
@@ -123,11 +121,8 @@
 .popular {
   padding: 40px 20px;
   text-align: center;
-    background-image: url("https://static.vecteezy.com/system/resources/previews/031/351/721/non_2x/composition-of-black-friday-shopping-cart-with-gift-boxes-or-bags-on-dark-background-and-copy-space-concept-by-ai-generated-free-photo.jpg");
-     background-repeat: no-repeat;
-      background-size: cover;   
-      width: auto;
-      height: auto;  
+    background-color: bisque;
+      
 }
 .popular-container {
   display: grid;
