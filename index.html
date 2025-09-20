@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online Shopping App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
 
@@ -12,6 +13,7 @@
   text-align: center;
   padding: 50px;
   background: #ffdd57;
+  margin-top: 70px;
 }
 
 .hero h2 {
@@ -33,10 +35,10 @@
   <header>
     <h1>🛍️ Online Shopping App</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="cart.html">Cart</a>
-      <a href="signup.html">Sign Up</a>
+      <a  href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="shop.html"><i class="fas fa-store"></i>Shop</a>
+      <a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart</a>
+      <a href="signup.html"><i class="fas fa-user-plus"></i>Sign Up</a>
     </nav>
   </header>
 
@@ -77,19 +79,20 @@
       <div class="product">
         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXxlbnwwfHwwfHx8MA%3D%3D" alt="Shoes"> 
         <h3>Running Shoes</h3>
-        <p>$49</p>
+       
+        <a href="shop.html" class="btn"> $49 Buy</a>
       </div>
       <div class="product">
         <img src="https://via.placeholder.com/200" alt="Watch">
         <h3>Smart Watch</h3>
-        <p>$99</p>
-        <a href="shop.html" class="btn">Shop Now</a>
+        
+        <a href="shop.html" class="btn">$99 Buy</a>
       </div>
       <div class="product">
         <img src="https://via.placeholder.com/200" alt="Headphones">
         <h3>Wireless Headphones</h3>
-        <p>$79</p>
-        <a href="shop.html" class="btn">Shop Now</a>
+       
+        <a href="shop.html" class="btn"> $79 Buy</a>
       </div>
     </div>
   </section>

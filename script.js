@@ -109,3 +109,14 @@ if (document.getElementById("checkout")) {
     }
   });
 }
+
+ document.addEventListener("DOMContentLoaded", function() {
+    let currentPage = window.location.pathname.split("/").pop(); // get current file name
+    let links = document.querySelectorAll("header nav a");
+
+    links.forEach(link => {
+      if(link.getAttribute("href") === currentPage || (currentPage === "" && link.getAttribute("href") === "#")) {
+        link.classList.add("active");
+      }
+    });
+  });

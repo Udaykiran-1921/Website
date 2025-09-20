@@ -6,27 +6,48 @@
   background: #f8f8f8;
 }
 
-header {
-   background: linear-gradient(90deg, #3f1d1d,#326f7e, #132c32); 
-  color: white;
-  padding: 18px 29px;   /* reduced from 15px */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  header {
+      position: fixed;     /* Fixes the header */
+      top: 0;              /* Stick to top */
+      left: 0;
+      width: 100%;         /* Full width */
+      background-color: #222; 
+      color: #fff;
+      padding: 15px 20px;
+      z-index: 1000;       /* Keep above all elements */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    header nav{
+      display: flex;
+      gap: 15px;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    header nav a.active
+     {
+      color: #07c7f7;
+      font-weight: bold;
+      border-bottom: 3px solid #ce05ed;
 }
 
-header h1 {
-  font-size: 20px;     /* smaller title */
-  margin: 0;
-}
-
-nav a {
-    font-style: italic;
-  color: white;
-  margin-left: 10px;
-  text-decoration: none;
-  font-size: 20px;     /* smaller link text */
-}
+    header nav a:hover {
+      color: hsl(31, 100%, 50%);
+    }
 .btn {
    background-color:#3f1d1d ;
   color: white;
