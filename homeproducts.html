@@ -3,42 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>home products</title>
-  <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Home Products</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+         
+  background-color: rgb(137, 183, 244);
+      margin: 0;
+      font-family: Arial, sans-serif;
+     
+    }
 
+    header {
+      background: #333;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Cart Badge */
+    .cart-badge {
+      background: red;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 3px 7px;
+      position: absolute;
+      top: -8px;
+      right: -12px;
+    }
+
+    /* Hamburger */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    /* Responsive container */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+        margin-top: 70px;
+    }
+
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      max-width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .product p {
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .btn {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #218838;
+    }
+
+    /* 📱 Mobile Responsive */
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #444;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        display: none;
+      }
+
+      nav.active {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      @keyframes slideDown {
+        from {opacity: 0; transform: translateY(-10px);}
+        to {opacity: 1; transform: translateY(0);}
+      }
+
+      .container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<style>
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 30px;
-}
-
-.product {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.product img {
-  width: 200px;       /* fixed width */
-  height: 200px;      /* fixed height */
-  object-fit: cover;  /* crop & center without distortion */
-  border-radius: 8px;
-}
-
-</style>
 <body>
   <header>
     <h1>🛍️ Shop</h1>
     <nav>
-        <a  href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
-      <a href="shop.html"><i class="fas fa-store"></i>Shop</a>
+      <a  href="index.html" ><i class="fas fa-home"></i> Home</a>
+      <a href="shop.html" class="active"><i class="fas fa-store"></i>Shop</a>
       <a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart</a>
       <a href="signup.html"><i class="fas fa-user-plus"></i>Sign Up</a>
     </nav>
@@ -46,48 +179,58 @@
 
   <div class="container" id="products"></div>
 
-<script> 
-var products = [
-  { id: 1, name: "wash mop", price: 250, img: "https://media.istockphoto.com/id/620730254/photo/plastic-bucket-with-cleaning-supplies-in-home.jpg?s=612x612&w=0&k=20&c=ZOAEoE4M6QoIwduuXL16H-shGbI5MOl6thkoMmV9BnA=" },
-  { id: 2, name: "groom stick", price: 240, img: "https://static.vecteezy.com/system/resources/previews/048/240/728/large_2x/top-of-view-one-broom-stick-on-the-white-background-photo.JPG" },
-  { id: 3, name: "lysol", price: 450, img: "https://images-cdn.ubuy.co.in/67c9bfbcb2da157f812e8b9c-lysol-bathroom-cleaner-spray-bleach.jpg" },
-  { id: 4, name: "air freshner", price: 120, img: "https://www.bbassets.com/media/uploads/p/l/40134365_3-godrej-aer-matic-automatic-air-freshener-kit-with-flexi-control-violet-valley-bloom.jpg" },
-  { id: 5, name: "chair", price: 1100, img: "https://www.estre.in/cdn/shop/files/1-min_1a7b23d8-e00c-4bca-86fe-9c65a55bcd1d.jpg?v=1743763633" },
-  { id: 6, name: "stool", price: 300, img: "https://www.bbassets.com/media/uploads/p/l/40299526_1-joyo-plastics-better-home-high-stool-plastic-high-quality-sturdy-brown.jpg" },
-  { id: 7, name: "hanger", price: 1500, img: "https://i.pinimg.com/736x/95/22/45/952245451ff4534407f637a3c461cb43.jpg" },
-  { id: 8, name: "napkin handle", price: 500, img: "https://www.ferio.in/image/cache/catalog/products_2023/BA1101-CP-1-(2)-616x616.jpg.webp" }
+  <script> 
+    var products = [
+      { id: 1, name: "wash mop", price: 250, img: "https://media.istockphoto.com/id/620730254/photo/plastic-bucket-with-cleaning-supplies-in-home.jpg?s=612x612&w=0&k=20&c=ZOAEoE4M6QoIwduuXL16H-shGbI5MOl6thkoMmV9BnA=" },
+      { id: 2, name: "groom stick", price: 240, img: "https://static.vecteezy.com/system/resources/previews/048/240/728/large_2x/top-of-view-one-broom-stick-on-the-white-background-photo.JPG" },
+      { id: 3, name: "lysol", price: 450, img: "https://images-cdn.ubuy.co.in/67c9bfbcb2da157f812e8b9c-lysol-bathroom-cleaner-spray-bleach.jpg" },
+      { id: 4, name: "air freshner", price: 120, img: "https://www.bbassets.com/media/uploads/p/l/40134365_3-godrej-aer-matic-automatic-air-freshener-kit-with-flexi-control-violet-valley-bloom.jpg" },
+      { id: 5, name: "chair", price: 1100, img: "https://www.estre.in/cdn/shop/files/1-min_1a7b23d8-e00c-4bca-86fe-9c65a55bcd1d.jpg?v=1743763633" },
+      { id: 6, name: "stool", price: 300, img: "https://www.bbassets.com/media/uploads/p/l/40299526_1-joyo-plastics-better-home-high-stool-plastic-high-quality-sturdy-brown.jpg" },
+      { id: 7, name: "hanger", price: 1500, img: "https://i.pinimg.com/736x/95/22/45/952245451ff4534407f637a3c461cb43.jpg" },
+      { id: 8, name: "napkin handle", price: 500, img: "https://www.ferio.in/image/cache/catalog/products_2023/BA1101-CP-1-(2)-616x616.jpg.webp" }
+    ];
 
-];
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-//add to cart button
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    function saveCart() {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
 
-function saveCart() {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
+    function updateCartCount() {
+      document.getElementById("cart-count").textContent = cart.length;
+    }
 
-// Display products on Shop Page
-if (document.getElementById("products")) {
-  const container = document.getElementById("products");
-  products.forEach(p => {
-    const div = document.createElement("div");
-    div.classList.add("product");
-    div.innerHTML = `
-      <img src="${p.img}" alt="${p.name}">
-      <h3>${p.name}</h3>
-      <p>Rs.${p.price}</p>
-      <button class="btn" onclick="addToCart(${p.id})">Add to Cart</button>
-    `;
-    container.appendChild(div);
-  });
-}
+    if (document.getElementById("products")) {
+      const container = document.getElementById("products");
+      products.forEach(p => {
+        const div = document.createElement("div");
+        div.classList.add("product");
+        div.innerHTML = `
+          <img src="${p.img}" alt="${p.name}">
+          <h3>${p.name}</h3>
+          <p>Rs.${p.price}</p>
+          <button class="btn" onclick="addToCart(${p.id})">Add to Cart</button>
+        `;
+        container.appendChild(div);
+      });
+    }
 
-function addToCart(id) {
-  const product = products.find(p => p.id === id);
-  cart.push(product);
-  saveCart();
-  alert(product.name + " added to cart!");
-}
-</script>
+    function addToCart(id) {
+      const product = products.find(p => p.id === id);
+      cart.push(product);
+      saveCart();
+      updateCartCount();
+      alert(product.name + " added to cart!");
+    }
+
+    // ✅ Toggle Navbar for mobile
+    document.querySelector(".menu-toggle").addEventListener("click", () => {
+      document.getElementById("navbar").classList.toggle("active");
+    });
+
+    // ✅ Show initial cart count on load
+    updateCartCount();
+  </script>
 </body>
 </html>
