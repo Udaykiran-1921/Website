@@ -93,7 +93,7 @@
   background-image: url("https://t3.ftcdn.net/jpg/09/47/24/02/360_F_947240266_vILwmKGTvRMeF5qUI3JdmafagYMSBj69.jpg");
   background-repeat: no-repeat;
   background-size: cover;   
-  width: 100%;  
+  width: auto;  
 }
 .category-container {
   display: flex;
