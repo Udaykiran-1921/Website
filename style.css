@@ -34,20 +34,48 @@
       color: white;
       text-decoration: none;
       margin: 0 15px;
+      margin-top: 5px;
       font-size: 16px;
       font-style: italic;
     }
 
     header nav a.active
      {
-      color: #f6f603;
+      color: #032bf6;
       font-weight: bold;
-      border-bottom: 3px solid #ce05ed;
+      
 }
 
     header nav a:hover {
-      color: hsl(128, 96%, 46%);
+      color: hsl(112, 98%, 50%);
     }
+
+    .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+ }
+
+ .search-bar input {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+ }
+
+ .search-bar button {
+    background-color: rgb(46, 59, 245);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+ }
+
+ .search-bar button:hover {
+    background-color: darkblue;
+ }
+ 
 .btn {
    background-color:#3f1d1d ;
   color: white;
